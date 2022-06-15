@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext,   } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './feed.css';
 import StoryRow from './StoryRow';
 import MessageSender from './MessageSender';
@@ -6,14 +6,14 @@ import Post from './Post';
 import Context from './Context';
 import db from '../firebaseConfig';
 import { collection, getDocs, orderBy } from 'firebase/firestore';
-function Feed( ) {
+function Feed() {
   const ctx = useContext(Context);
 
   const [posts, setPosts] = useState([]);
   const fetchData = () => {
     const querySnapshot = getDocs(
       collection(db, 'posts'),
-      orderBy('timestamp', 'desc')
+      orderBy('timestamp')
     ).then((data) => {
       setPosts(
         data.docs.map((doc) => {
