@@ -13,7 +13,7 @@ const Post = ({ userProfilePic, image, userName, timeStamp = 1, message }) => {
         </Stack>
         <div className="postTopInfo">
           <h4>{userName}</h4>
-          <p>{timeStamp.toString()}</p>
+          <p>{timeStamp}</p>
         </div>
       </div>
       <div className="postBottom">

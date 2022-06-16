@@ -5,7 +5,8 @@ import Stack from '@mui/material/Stack';
 import { BsCameraVideoFill } from 'react-icons/bs';
 import { FaPhotoVideo, FaRegSmileBeam } from 'react-icons/fa';
 import Context from './Context';
-import { collection, addDoc } from 'firebase/firestore';
+
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import db from '../firebaseConfig';
 
 const MessageSender = () => {
@@ -24,7 +25,7 @@ const MessageSender = () => {
       try {
         const docRef = await addDoc(collection(db, 'posts'), {
           message: input,
-          timeStamp: new Date().toUTCString(),
+          timeStamp: serverTimestamp(),
           userProfilePic: user.photoURL,
           userName: user.displayName,
           image: imageURL,
