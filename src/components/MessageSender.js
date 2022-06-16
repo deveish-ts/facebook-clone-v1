@@ -6,8 +6,11 @@ import { BsCameraVideoFill } from 'react-icons/bs';
 import { FaPhotoVideo, FaRegSmileBeam } from 'react-icons/fa';
 import Context from './Context';
 
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import db from '../firebaseConfig';
+
+var today = new Date();
+const time = today.toString();
 
 const MessageSender = () => {
   const ctx = useContext(Context);
@@ -25,7 +28,7 @@ const MessageSender = () => {
       try {
         const docRef = await addDoc(collection(db, 'posts'), {
           message: input,
-          timeStamp: serverTimestamp(),
+          timeStamp: time,
           userProfilePic: user.photoURL,
           userName: user.displayName,
           image: imageURL,

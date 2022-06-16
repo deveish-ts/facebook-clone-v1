@@ -4,7 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { AiOutlineLike, AiOutlineComment } from 'react-icons/ai';
 import { BiShare } from 'react-icons/bi';
-const Post = ({ userProfilePic, image, userName, timeStamp = 1, message }) => {
+const Post = ({ userProfilePic, image, userName, timeStamp, message }) => {
   return (
     <div className="post">
       <div className="postTop">
@@ -13,7 +13,7 @@ const Post = ({ userProfilePic, image, userName, timeStamp = 1, message }) => {
         </Stack>
         <div className="postTopInfo">
           <h4>{userName}</h4>
-          <p>{timeStamp}</p>
+          <p>{timeStamp.toString()}</p>
         </div>
       </div>
       <div className="postBottom">
