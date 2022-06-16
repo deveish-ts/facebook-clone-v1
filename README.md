@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-
+Visit this app (currently only desktop view)-https://clone-v1ishadfs12ds323r.netlify.app/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
