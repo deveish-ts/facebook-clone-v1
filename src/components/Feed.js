@@ -13,7 +13,7 @@ function Feed() {
   const fetchData = () => {
     const querySnapshot = getDocs(
       collection(db, 'posts'),
-      orderBy('timestamp')
+      orderBy('timeStamp', 'desc')
     ).then((data) => {
       setPosts(
         data.docs.map((doc) => {

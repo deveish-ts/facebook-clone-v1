@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import { AiOutlineLike, AiOutlineComment } from 'react-icons/ai';
 import { BiShare } from 'react-icons/bi';
 const Post = ({ userProfilePic, image, userName, timeStamp, message }) => {
+  console.log(new Date(timeStamp));
   return (
     <div className="post">
       <div className="postTop">
